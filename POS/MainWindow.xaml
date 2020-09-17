@@ -1,0 +1,228 @@
+﻿<controls:BlurryWindow x:Class="POS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POS"
+        xmlns:internals="clr-namespace:BlurryControls.Internals;assembly=BlurryControls"
+        xmlns:controls="clr-namespace:BlurryControls.Controls;assembly=BlurryControls"
+        mc:Ignorable="d"
+        Background="#CC1F1F1F"
+        
+        Strength="0.8" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="POS" Height="600" Width="1080" WindowStartupLocation="CenterScreen" WindowState="Normal" FontFamily="Segoe">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="471*"/>
+            <ColumnDefinition Width="116*"/>
+            <ColumnDefinition Width="237*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <ListView>
+                    <ListViewItem >
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="HomeOutline" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="Inicio" VerticalAlignment="Center" Margin="5"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="BoxVariant" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="Productos" VerticalAlignment="Center" Margin="5"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="UsersOutline" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="Usuarios" VerticalAlignment="Center" Margin="5"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="SettingsOutline" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Text="Configuración" VerticalAlignment="Center" Margin="5"></TextBlock>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+            <StackPanel Grid.Row="1">
+                <StackPanel Margin="10" >
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0 10">
+                        <Ellipse Height="30" Width="30" Margin="5 0 4 0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="profe.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Foreground="LightGray" VerticalAlignment="Center" Margin="5.0"><Run Text="Mateo"/><Run Text=" N"/><Run Text="u"/><Run Text="ñez"/></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <materialDesign:PackIcon  Foreground="white"  Kind="DateRange" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Foreground="white" VerticalAlignment="Center" Text="17 Sep 2020 10:00 AM" Margin="5.0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <materialDesign:PackIcon Foreground="white" Kind="Computer" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Foreground="white" VerticalAlignment="Center" Text="5" Margin="5.0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125"/>
+                <RowDefinition Height="330*"/>
+                <RowDefinition Height="121*"/>
+            </Grid.RowDefinitions>
+            <ListView  Grid.Row="0"  Margin="10"  VerticalAlignment="Top"  ScrollViewer.VerticalScrollBarVisibility="Disabled"  >
+                <ListViewItem>
+                    <TextBlock Foreground="White" Margin="5" VerticalAlignment="Center" Text="Cliente" FontSize="16" HorizontalAlignment="Left"/>
+                </ListViewItem>
+
+                <ListViewItem >
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Ellipse Height="30" Width="30" Margin="5 0 4 0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="Yo.jpg"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Foreground="LightGray" VerticalAlignment="Center" Text="Joel Giménez" Margin="5.0"/>
+                    </StackPanel>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBlock Foreground="White" Margin="5 10 10 5" VerticalAlignment="Center" Text="RUC" FontSize="16" HorizontalAlignment="Left"/>
+                </ListViewItem>
+                <ListViewItem>
+                    <TextBlock Foreground="LightGray" VerticalAlignment="Center" Text="5099151" Margin="5 0"/>
+                </ListViewItem>
+            </ListView>
+            <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Margin="20" CornerRadius="5">
+
+                <ListView Margin="0 10 0 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="earbuds.jpg" />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                <TextBlock TextWrapping="Wrap" Text="NUEVO Microsoft Surface Earbuds" Foreground="Gray" FontSize="14"  Width="140" Height="Auto" />
+                                <TextBlock Text="13123213213213" Foreground="Gray" FontSize="10"/>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" Text="2.000.000 Gs" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Grid.Column="3" Text="3" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Grid.Column="4" Text="6.000.000 Gs" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+                        </Grid>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="mouse.jpg" StretchDirection="DownOnly" />
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                                <TextBlock TextWrapping="Wrap" Text="Microsoft Mouse" Foreground="Gray" FontSize="14" Width="140"  Height="Auto"/>
+                                <TextBlock Text="13123213213213" Foreground="Gray" FontSize="10"/>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" Text="1.000.000 Gs" Foreground="Gray" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Grid.Column="3" Text="1" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+                            <TextBlock Grid.Column="4" Text="1.000.000 Gs" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+                        </Grid>
+                    </ListViewItem>
+                        
+                        
+
+                </ListView>
+            </Border>
+            <Grid Grid.Row="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="188*"/>
+                    <ColumnDefinition Width="95*"/>
+                    <ColumnDefinition Width="94*"/>
+                    <ColumnDefinition Width="94*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <TextBox Foreground="White" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Código de barras" Grid.Row="0" Grid.Column="0" Margin="10,10,10,0" Height="40"/>
+                <TextBox Foreground="White" Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Cantidad" Margin="10,10,10,0" Height="40"/>
+                <TextBox Foreground="White" Grid.Row="0" Grid.Column="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Descuento" Margin="10,10,10,0" Height="40"/>
+                <TextBox Foreground="White" Grid.Row="0" Grid.Column="3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  materialDesign:HintAssist.Hint="Total" Margin="10,10,10,0" Height="40"/>
+                <Button Content="PAGAR" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Width="Auto" Height="Auto" Click="Button_Click" BorderBrush="Transparent" Background="OrangeRed"/>
+                <TextBlock Grid.Row="0" Grid.Column="0"/>
+
+            </Grid>
+
+
+
+        </Grid>
+        <Grid Grid.Column="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <materialDesign:ColorZone Margin="5" Background="Transparent">
+                <TextBlock Text="7.000.000 Gs." FontSize="40" HorizontalAlignment="Center" Margin="20"/>
+            </materialDesign:ColorZone>
+            <Border BorderBrush="LightGray" Background="White"  BorderThickness="1" CornerRadius="5" Grid.Row="1" Margin="5">
+                <Grid>
+                    <Image Source="3263.jpg" Margin="10"/>
+                </Grid>
+            </Border>
+            <Grid Grid.Row="2" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Grid.Row="0" Width="Auto" Height="Auto" Content="7" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Content="8" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="2" Grid.Row="0" Width="Auto" Height="Auto" Content="9" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="0" Grid.Row="1" Width="Auto" Height="Auto" Content="4" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="1" Grid.Row="1" Width="Auto" Height="Auto" Content="5" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="2" Grid.Row="1" Width="Auto" Height="Auto" Content="6" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="0" Grid.Row="2" Width="Auto" Height="Auto" Content="1" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="1" Grid.Row="2" Width="Auto" Height="Auto" Content="2" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="2" Grid.Row="2" Width="Auto" Height="Auto" Content="3" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+
+
+                <Button Grid.Column="0" Grid.Row="3" Width="Auto" Height="Auto" Content="BORRAR" Margin="5" Background="#000000" BorderBrush="WHITE"/>
+                <Button Grid.Column="1" Grid.Row="3" Width="Auto" Height="Auto" Content="0" Margin="5" FontWeight="Bold" Background="Black" BorderBrush="Transparent"/>
+                <Button Grid.Column="2" Grid.Row="3" Width="Auto" Height="Auto" Content="." Margin="5" Background="#000000" BorderBrush="WHITE"/>
+
+                <Button Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Width="Auto" Height="Auto" Content="ENTER" Margin="5" Background="#000000" BorderBrush="WHITE"/>
+                <Button Grid.Column="2" Grid.Row="4" Width="Auto" Height="Auto" Content="CANCELAR" Margin="5" Background="#000000" Foreground="OrangeRed" Style="{StaticResource MaterialDesignFlatButton}"/>
+
+            </Grid>
+        </Grid>
+    </Grid>
+
+
+
+</controls:BlurryWindow>
